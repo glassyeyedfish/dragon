@@ -9,8 +9,9 @@ import (
 )
 
 const IMAGE_SIZE = 512
-const OFFSET = 0
-const START_X, START_Y = IMAGE_SIZE/2 + OFFSET, IMAGE_SIZE/2 - OFFSET
+const OFFSET_X = 0
+const OFFSET_Y = -0
+const START_X, START_Y = IMAGE_SIZE/2 + OFFSET_X, IMAGE_SIZE/2 - OFFSET_Y
 const STEP = 2
 const MAX_ITERATIONS = 14
 
@@ -89,10 +90,10 @@ func DrawDragon(img *image.NRGBA, instructions []int, color color.NRGBA) {
 func main() {
 
 	// internal constants
-	color_1 := color.NRGBA{R: 255, G: 255, B: 255, A: 255}
-	color_2 := color.NRGBA{R: 255, G: 0, B: 0, A: 255}
+	color_1 := color.NRGBA{R: 255, G: 0, B: 255, A: 255}
+	color_2 := color.NRGBA{R: 255, G: 125, B: 0, A: 255}
 	color_3 := color.NRGBA{R: 0, G: 255, B: 0, A: 255}
-	color_4 := color.NRGBA{R: 0, G: 0, B: 255, A: 255}
+	color_4 := color.NRGBA{R: 0, G: 125, B: 255, A: 255}
 
 	// Create image full of black pixels
 	img := image.NewNRGBA(image.Rect(0, 0, IMAGE_SIZE, IMAGE_SIZE))
